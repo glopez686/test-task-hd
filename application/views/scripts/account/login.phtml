@@ -1,0 +1,18 @@
+<div id="box">
+    <center><h1>Welcome!</h1><br>
+        <h3>Please click the Login button to Login.</h3>
+        <a href="#overlay" id="button">LOGIN</a><br><br><br><br>
+    </center>
+</div>
+
+<div id="overlay">
+
+    <div id="popup">
+        <p>Press Esc to cancel</p>
+        <a href=""><img class="close_button" src="/images/close_t.jpg"/></a>
+        <?= $this->Errors($this->errors); ?>
+        <p id="formerrors"></p>
+        <?= $this->form; ?>
+        
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            <?php echo (!is_null($this->pageTitle)) ? $this->pageTitle : "Test Task Hebs Digital"; ?>
+        </title>
+        <meta charset="utf-8" />
+        <meta name="author" content="glopez686@gmail.com" >
+
+        <link rel="stylesheet" href="/css/styles.css" type="text/css" >
+        <link href="/css/popup.css" rel="stylesheet" type="text/css"/>
+        
+        <!---->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+        <script src="/js/index.js"></script>
+       
+        <?php echo $this->headMeta() ?>
+        <?php echo $this->headScript() ?> 
+        <?php echo $this->headStyle() ?>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <div class="container">
+                    <!-- header right side text -->          
+                    <div class="span-16 last" style="text-align: right;">
+                        <?php if ($this->account) { ?><br/><br/><br/><br/>
+                            <p> Welcome <a href="/account/index"><?php echo $this->account; ?></a> &middot; <a href="/account/logout">Logout</a></p>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+            <!-- messages -->
+            <div class="container">
+                <div class="span-24 last">
+
+                    <?php
+                    if (count($this->messages) > 0) {
+                        printf("<div id='flash'>%s</div>", $this->messages[0]);
+                    }
+                    ?>
+
+                    <?php echo $this->layout()->content; ?>
+                </div>
+            </div>
+            <!-- footer -->
+            <div id="footer">
+
+            </div>
+        </div>
+    </body>
+</html>
